@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahin Arif - AI & Automation Developer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            color: #e2e8f0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-bottom: 3rem;
+        }
+
+        .hero-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 500;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .hero-info h1 {
+            font-size: 28px;
+            font-weight: 500;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-info p {
+            color: #94a3b8;
+            font-size: 14px;
+            margin: 4px 0 0 0;
+        }
+
+        .hero-desc {
+            color: #cbd5e1;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0 0 1rem 0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 0.5px solid rgba(59, 130, 246, 0.3);
+            border-radius: 6px;
+            font-size: 13px;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .social-btn:hover {
+            background: rgba(59, 130, 246, 0.25);
+            border-color: rgba(59, 130, 246, 0.6);
+        }
+
+        .social-btn.email {
+            background: rgba(251, 146, 60, 0.15);
+            color: #fb923c;
+            border-color: rgba(251, 146, 60, 0.3);
+        }
+
+        .social-btn.email:hover {
+            background: rgba(251, 146, 60, 0.25);
+            border-color: rgba(251, 146, 60, 0.6);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(59, 130, 246, 0.1);
+            border: 0.5px solid rgba(59, 130, 246, 0.2);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .stat-card:nth-child(2) {
+            background: rgba(168, 85, 247, 0.1);
+            border-color: rgba(168, 85, 247, 0.2);
+        }
+
+        .stat-card:nth-child(3) {
+            background: rgba(251, 146, 60, 0.1);
+            border-color: rgba(251, 146, 60, 0.2);
+        }
+
+        .stat-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .stat-number {
+            font-size: 22px;
+            font-weight: 500;
+            color: #60a5fa;
+            margin: 0;
+        }
+
+        .stat-card:nth-child(2) .stat-number {
+            color: #d8b4fe;
+        }
+
+        .stat-card:nth-child(3) .stat-number {
+            color: #fdba74;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #94a3b8;
+            margin: 4px 0 0 0;
+        }
+
+        /* Section Headers */
+        h2 {
+            color: #e2e8f0;
+            font-size: 18px;
+            font-weight: 500;
+            margin: 0 0 1rem 0;
+        }
+
+        h2.skills-header {
+            margin-bottom: 1rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-bottom: 3rem;
+        }
+
+        .skill-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 0.5px solid rgba(59, 130, 246, 0.2);
+            border-radius: 10px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .skill-card:nth-child(2) {
+            border-color: rgba(168, 85, 247, 0.2);
+        }
+
+        .skill-card:nth-child(3) {
+            border-color: rgba(251, 146, 60, 0.2);
+        }
+
+        .skill-card:hover {
+            background: rgba(15, 23, 42, 0.95);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+
+        .skill-card:nth-child(2):hover {
+            border-color: rgba(168, 85, 247, 0.5);
+        }
+
+        .skill-card:nth-child(3):hover {
+            border-color: rgba(251, 146, 60, 0.5);
+        }
+
+        .skill-title {
+            color: #60a5fa;
+            font-size: 12px;
+            font-weight: 500;
+            margin: 0 0 8px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .skill-card:nth-child(2) .skill-title {
+            color: #d8b4fe;
+        }
+
+        .skill-card:nth-child(3) .skill-title {
+            color: #fdba74;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .skill-card:nth-child(2) .skill-tag {
+            background: rgba(168, 85, 247, 0.2);
+            color: #d8b4fe;
+        }
+
+        .skill-card:nth-child(3) .skill-tag {
+            background: rgba(251, 146, 60, 0.2);
+            color: #fdba74;
+        }
+
+        /* Experience Timeline */
+        .experience-section {
+            margin-bottom: 3rem;
+        }
+
+        .timeline {
+            border-left: 2px solid rgba(59, 130, 246, 0.3);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            background: #3b82f6;
+            border-radius: 50%;
+            position: absolute;
+            left: -21px;
+            top: 4px;
+        }
+
+        .timeline-item:last-child .timeline-dot {
+            background: rgba(59, 130, 246, 0.6);
+        }
+
+        .timeline-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 0.5px solid rgba(59, 130, 246, 0.2);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        .timeline-item:last-child .timeline-card {
+            border-color: rgba(59, 130, 246, 0.15);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .timeline-title {
+            color: #e2e8f0;
+            font-weight: 500;
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .timeline-company {
+            color: #60a5fa;
+            font-size: 13px;
+            margin: 2px 0 0 0;
+        }
+
+        .timeline-date {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            white-space: nowrap;
+        }
+
+        .timeline-description {
+            color: #cbd5e1;
+            font-size: 13px;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .timeline-awards {
+            margin-top: 8px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .award-badge {
+            background: rgba(59, 130, 246, 0.1);
+            color: #60a5fa;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+        }
+
+        /* Education & Certifications */
+        .edu-cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .edu-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 0.5px solid rgba(139, 92, 246, 0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+
+        .edu-card:nth-child(2) {
+            border-color: rgba(251, 146, 60, 0.2);
+        }
+
+        .edu-label {
+            color: #d8b4fe;
+            font-size: 12px;
+            font-weight: 500;
+            margin: 0 0 12px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .edu-card:nth-child(2) .edu-label {
+            color: #fdba74;
+        }
+
+        .edu-title {
+            color: #e2e8f0;
+            font-weight: 500;
+            margin: 0 0 4px 0;
+            font-size: 14px;
+        }
+
+        .edu-subtitle {
+            color: #94a3b8;
+            font-size: 12px;
+            margin: 0;
+        }
+
+        .edu-gpa {
+            color: #60a5fa;
+            font-size: 12px;
+            margin: 8px 0 0 0;
+        }
+
+        .cert-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cert-list li {
+            color: #cbd5e1;
+            font-size: 13px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cert-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .cert-check {
+            color: #fdba74;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 0.5px solid rgba(59, 130, 246, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer p {
+            color: #94a3b8;
+            font-size: 12px;
+            margin: 0;
+        }
+
+        .footer p:first-child {
+            margin-bottom: 4px;
+        }
+
+        .footer-note {
+            color: #64748b;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+
+            .hero-header {
+                gap: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-info h1 {
+                font-size: 22px;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 10px;
+            }
+
+            .stat-card {
+                padding: 0.75rem;
+            }
+
+            .stat-number {
+                font-size: 18px;
+            }
+
+            .stat-label {
+                font-size: 11px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .edu-cert-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .social-btn {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-header">
+                <div class="avatar">MA</div>
+                <div class="hero-info">
+                    <h1>Mahin Arif</h1>
+                    <p>Packaged App Development Analyst</p>
+                </div>
+            </div>
+            <p class="hero-desc">2+ years delivering Python-driven enterprise solutions and AI automation for US banking & financial services. Tech Champion, award-winning developer, hands-on with emerging AI technologies.</p>
+            <div class="social-links">
+                <a href="https://github.com/Mahin-Arif" target="_blank" class="social-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://linkedin.com/in/mahin-arif" target="_blank" class="social-btn">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="mailto:mahinarif2001@gmail.com" class="social-btn email">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <p class="stat-number">2+</p>
+                <p class="stat-label">Years Experience</p>
+            </div>
+            <div class="stat-card">
+                <p class="stat-number">5+</p>
+                <p class="stat-label">Tech Skills</p>
+            </div>
+            <div class="stat-card">
+                <p class="stat-number">3</p>
+                <p class="stat-label">Awards Won</p>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <h2 class="skills-header">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <p class="skill-title">Programming</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">SQL</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <p class="skill-title">AI & Automation</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Agentic AI</span>
+                    <span class="skill-tag">GenAI</span>
+                    <span class="skill-tag">Prompt Eng</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <p class="skill-title">Tools</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Jira</span>
+                    <span class="skill-tag">UiPath</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="experience-section">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <!-- Accenture -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <p class="timeline-title">Packaged App Development Analyst</p>
+                                <p class="timeline-company">Accenture</p>
+                            </div>
+                            <span class="timeline-date">Oct 2024–Now</span>
+                        </div>
+                        <p class="timeline-description">Built Python data conversion solutions, collaborated on US banking projects with Agile teams, worked with UiPath Orchestrator.</p>
+                        <div class="timeline-awards">
+                            <span class="award-badge">Tech Champion FY26 Q1</span>
+                            <span class="award-badge">Data Conversion Award</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TCS -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <p class="timeline-title">Assistant System Engineer</p>
+                                <p class="timeline-company">Tata Consultancy Services</p>
+                            </div>
+                            <span class="timeline-date">Jun–Oct 2024</span>
+                        </div>
+                        <p class="timeline-description">Java training completion, Miss TCS Runner-Up recognition in ILP program.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education & Certifications -->
+        <div class="edu-cert-grid">
+            <!-- Education -->
+            <div class="edu-card">
+                <p class="edu-label">Education</p>
+                <p class="edu-title">B.E. Information Science</p>
+                <p class="edu-subtitle">Yenepoya Institute of Technology, 2023</p>
+                <p class="edu-gpa">CGPA: 8.0/10</p>
+            </div>
+
+            <!-- Certifications -->
+            <div class="edu-card">
+                <p class="edu-label">Certifications</p>
+                <ul class="cert-list">
+                    <li><span class="cert-check">✓</span> Reinvention with Agentic AI</li>
+                    <li><span class="cert-check">✓</span> TCS Java Stream Training</li>
+                    <li><span class="cert-check">✓</span> Kotlin & LaTeX Tutorials</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Based in Bengaluru, India • +91 9741139982</p>
+            <p class="footer-note">Open to opportunities in AI/Automation, Python Development, and Banking/FinTech</p>
+        </div>
+    </div>
+</body>
+</html>
